@@ -1,10 +1,7 @@
-export const Statistics = ({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) => {
+export const Statistics = ({ good, neutral, bad }) => {
+  const total = good + neutral + bad;
+
+  const positivePercentage = total === 0 ? 0 : Math.round((good / total) * 100);
   return (
     <>
       <p>Good: {good}</p>
